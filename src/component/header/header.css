@@ -1,0 +1,12 @@
+.title {
+    color: rgb(113, 5, 143);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    font-size: x-large;
+    margin-bottom: 40px;
+}
+
+.header-image {
+    height: 200px;
+    width: auto;
+}
