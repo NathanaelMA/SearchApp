@@ -1,3 +1,8 @@
-.searchSection {
-    display: inline-flex
+.searchBar {
+    display: inline-flex;
+    margin-left: 30px;
+}
+
+.searchItems {
+    display: inline-flex;
 }

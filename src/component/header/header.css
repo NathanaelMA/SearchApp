@@ -1,8 +1,9 @@
 .title {
-    color: rgb(9, 58, 84);
+    color: rgb(113, 5, 143);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 200;
-    font-size: large;
+    font-weight: 300;
+    font-size: x-large;
+    margin-bottom: 40px;
 }
 
 .header-image {
