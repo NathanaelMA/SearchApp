@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./Search.css";
-import IconButton from "@material-ui/core/IconButton";
 
 //Text Field and Search for Search Bar and Input Field
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
+import IconButton from "@material-ui/core/IconButton";
 
 //These imports to have a radio button
 import FormControl from "@material-ui/core/FormControl";
