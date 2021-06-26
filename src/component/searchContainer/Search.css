@@ -1,8 +1,17 @@
 .searchBar {
     display: inline-flex;
-    margin-left: 30px;
+    margin: 30px;
 }
 
-.searchItems {
+.searchElements {
+    display: -ms-inline-grid;
+}
+
+#refresh {
+    font-size: small;
+}
+
+.updateSearch {
     display: inline-flex;
+    margin: 30px;
 }
