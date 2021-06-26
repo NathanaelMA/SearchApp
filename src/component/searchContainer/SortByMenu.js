@@ -39,7 +39,7 @@ const StyledMenuItem = withStyles((theme) => ({
     },
 }))(MenuItem);
 
-export default function MenuListComposition() {
+export default function SortByMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
@@ -59,7 +59,7 @@ export default function MenuListComposition() {
                 color="primary"
                 onClick={handleClick}
             >
-                Open Menu
+                Sort By
             </Button>
             <StyledMenu
                 id="customized-menu"

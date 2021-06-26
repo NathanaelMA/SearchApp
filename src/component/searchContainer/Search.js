@@ -17,7 +17,7 @@ import Radio from "@material-ui/core/Radio";
 import SyncIcon from "@material-ui/icons/Sync";
 
 //get menu item from Material UI
-import MenuListComposition from "./MenuListComposition";
+import SortByMenu from "./SortByMenu";
 
 class Search extends Component {
     state = {};
@@ -65,7 +65,7 @@ class Search extends Component {
                     </IconButton>
                 </div>
                 <div className="menu">
-                    <MenuListComposition />
+                    <SortByMenu />
                 </div>
             </div>
         );
