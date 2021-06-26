@@ -1,3 +1,6 @@
+/* This file is only for the complex material UI implementation of the 
+dropdown sortby function */
+
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -53,7 +56,7 @@ export default function SortByMenu() {
     return (
         <div>
             <Button
-                aria-controls="customized-menu"
+                aria-controls="sort-menu"
                 aria-haspopup="true"
                 variant="contained"
                 color="primary"
@@ -62,7 +65,7 @@ export default function SortByMenu() {
                 Sort By
             </Button>
             <StyledMenu
-                id="customized-menu"
+                id="sort-by-menu"
                 anchorEl={anchorEl}
                 keepMounted
                 open={Boolean(anchorEl)}

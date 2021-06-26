@@ -59,12 +59,12 @@ class Search extends Component {
                     </div>
                 </div>
                 <div className="updateSearch">
-                    <p id="refresh">refresh</p>
+                    <p id="refresh">Refresh</p>
                     <IconButton aria-label="sync">
                         <SyncIcon />
                     </IconButton>
                 </div>
-                <div className="menu">
+                <div className="sort-by">
                     <SortByMenu />
                 </div>
             </div>
