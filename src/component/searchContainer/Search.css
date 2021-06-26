@@ -1,0 +1,17 @@
+.search-container {
+    display: -ms-inline-grid;
+}
+
+.searchBar {
+    display: inline-flex;
+    margin: 30px;
+}
+
+.search-elements {
+    display: inline-flex;
+}
+
+.updateSearch {
+    display: inline-flex;
+    margin: 30px;
+}
