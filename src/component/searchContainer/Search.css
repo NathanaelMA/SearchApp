@@ -1,14 +1,14 @@
+.search-container {
+    display: -ms-inline-grid;
+}
+
 .searchBar {
     display: inline-flex;
     margin: 30px;
 }
 
-.searchElements {
-    display: -ms-inline-grid;
-}
-
-#refresh {
-    font-size: small;
+.search-elements {
+    display: inline-flex;
 }
 
 .updateSearch {

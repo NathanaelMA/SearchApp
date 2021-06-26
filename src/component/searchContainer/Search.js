@@ -13,9 +13,6 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
 
-//Sync icon to refresh pull data
-import SyncIcon from "@material-ui/icons/Sync";
-
 //get menu item from Material UI
 import SortByMenu from "./SortByMenu";
 
@@ -24,8 +21,8 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="searchContainer">
-                <div className="searchElements">
+            <div className="search-container">
+                <div className="search-elements">
                     <div className="selectSearch">
                         <FormControl component="fieldset">
                             <FormLabel component="legend">Search By</FormLabel>
@@ -59,13 +56,9 @@ class Search extends Component {
                     </div>
                 </div>
                 <div className="updateSearch">
-                    <p id="refresh">Refresh</p>
-                    <IconButton aria-label="sync">
-                        <SyncIcon />
-                    </IconButton>
-                </div>
-                <div className="sort-by">
-                    <SortByMenu />
+                    <div className="sort-by">
+                        <SortByMenu />
+                    </div>
                 </div>
             </div>
         );
