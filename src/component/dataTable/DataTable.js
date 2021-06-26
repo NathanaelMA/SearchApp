@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./DataTable.css";
+import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
+import DeleteIcon from "@material-ui/icons/Delete";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import { IconButton } from "@material-ui/core";
 
 const useStyles = makeStyles({
   table: {
@@ -15,20 +18,20 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-];
-
-export default function DataTable(props) {
+export default function DataTable() {
   const classes = useStyles();
+
+  const [persons, setPerson] = useState([]);
+
+  useEffect(() => {
+    componentDidMount();
+  }, []);
+
+  const componentDidMount = () => {
+    axios.get(`https://jsonplaceholder.typicode.com/users`).then((res) => {
+      setPerson(res.data);
+    });
+  };
 
   return (
     <div className="data-table-container">
@@ -43,7 +46,7 @@ export default function DataTable(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.people.map((person) => (
+            {persons.map((person) => (
               <TableRow key={person.name}>
                 <TableCell component="th" scope="row">
                   {person.name}
@@ -51,6 +54,9 @@ export default function DataTable(props) {
                 <TableCell align="right">{person.email}</TableCell>
                 <TableCell align="right">{person.phone}</TableCell>
                 <TableCell align="right">{person.address.city}</TableCell>
+                <IconButton id="delete" onClick={() => deletePerson(person)}>
+                  <DeleteIcon />
+                </IconButton>
               </TableRow>
             ))}
           </TableBody>
@@ -58,4 +64,8 @@ export default function DataTable(props) {
       </TableContainer>
     </div>
   );
+
+  function deletePerson(person) {
+    setPerson(persons.filter((item) => item !== person));
+  }
 }
