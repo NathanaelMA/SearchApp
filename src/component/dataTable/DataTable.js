@@ -32,7 +32,7 @@ export default function DataTable(props) {
 
   const [persons, setPerson] = useState([]);
 
-  const [userInput, setUserInput] = useState([]);
+  const [userInput, setUserInput] = useState("");
 
   useEffect(() => {
     componentDidMount();
@@ -147,12 +147,11 @@ export default function DataTable(props) {
 
   // search for name or city based on argument value
   function handleText(text) {
-    let arr = [];
+    const arr = [];
     persons.map((person) => {
       if (person.name.toLowerCase().includes(text.toLowerCase()))
         arr.push(person);
-
-      if (person.address.city.toLowerCase().includes(text.toLowerCase()))
+      else if (person.address.city.toLowerCase().includes(text.toLowerCase()))
         arr.push(person);
     });
     setPerson(arr);
