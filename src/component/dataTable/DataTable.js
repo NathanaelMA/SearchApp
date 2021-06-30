@@ -147,9 +147,14 @@ export default function DataTable(props) {
 
   // search for name or city based on argument value
   function handleText(text) {
+    let arr = [];
     return persons.map((person) => {
-      if (person.name === text) setPerson([person]);
-      if (person.address.city === text) setPerson([person]);
+      if (person.name.toLowerCase().includes(text.toLowerCase())) {
+        setPerson([person]);
+      }
+
+      if (person.address.city.toLowerCase().includes(text.toLowerCase()))
+        setPerson([person]);
     });
   }
 
