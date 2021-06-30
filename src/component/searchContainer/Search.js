@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./Search.css";
 
 //Text Field and Search for Search Bar and Input Field
@@ -17,6 +17,8 @@ import Radio from "@material-ui/core/Radio";
 import SortByMenu from "./SortByMenu";
 
 export default function Search() {
+  const [userInput, setUserInput] = useState([]);
+
   return (
     <div className="search-container">
       <div className="search-elements">
@@ -37,9 +39,10 @@ export default function Search() {
               id="search-field"
               label="Search User/City"
               placeholder="Jane Doe, Tokyo, etc"
+              onChange={(e) => setUserInput(e.target.value)}
             />
           </form>
-          <IconButton aria-label="search">
+          <IconButton aria-label="search" onClick={() => handleText(userInput)}>
             <SearchIcon />
           </IconButton>
         </div>
@@ -51,4 +54,8 @@ export default function Search() {
       </div>
     </div>
   );
+
+  function handleText(text) {
+    return console.log(text);
+  }
 }
