@@ -63,23 +63,6 @@ export default function DataTable(props) {
       {/* code from search js begins here */}
       <div className="search-container">
         <div className="search-elements">
-          {/* <div className="selectSearch">
-            <FormControl component="fieldset">
-              <FormLabel component="legend">Search By</FormLabel>
-              <RadioGroup>
-                <FormControlLabel
-                  value="name"
-                  control={<Radio />}
-                  label="Name"
-                />
-                <FormControlLabel
-                  value="city"
-                  control={<Radio />}
-                  label="City"
-                />
-              </RadioGroup>
-            </FormControl>
-          </div> */}
           <div className="searchBar">
             <form className="search" noValidate autoComplete="off">
               <TextField
@@ -87,6 +70,7 @@ export default function DataTable(props) {
                 label="Search User/City"
                 placeholder="Jane Doe, Tokyo, etc"
                 onChange={(e) => setUserInput(e.target.value)}
+                onKeyDown={(e) => handleKeyPress(e)}
               />
             </form>
             <IconButton
@@ -140,6 +124,14 @@ export default function DataTable(props) {
       </div>
     </span>
   );
+
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleText(userInput);
+      e.target.value = "";
+    }
+  }
 
   function deletePerson(person) {
     setPerson(persons.filter((item) => item !== person));
